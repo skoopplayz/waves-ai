@@ -38,15 +38,6 @@ body {
 	z-index: 1;
 }
 
-	background-size: var(--dot-space) var(--dot-space);
-	margin: 0;
-	padding: 0;
-	overflow-x: hidden;
-	scroll-behavior: smooth;
-	position: relative;
-	z-index: 1;
-}
-
 ::selection {
 	background-color: var(--color-accent);
 	color: var(--color-bg-primary);
