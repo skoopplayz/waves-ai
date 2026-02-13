@@ -28,7 +28,7 @@
 
 body {
 	font-family: var(--font-family-primary);
-	background-color: var(--color-pattern-bg);
+	background-color: transparent);
 	background-size: var(--dot-space) var(--dot-space);
 	margin: 0;
 	padding: 0;
