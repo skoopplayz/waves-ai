@@ -28,7 +28,17 @@
 
 body {
 	font-family: var(--font-family-primary);
-	background-color: #ffffff;
+	body {
+	font-family: var(--font-family-primary);
+	background-color: #ffffffce;
+	background-size: var(--dot-space) var(--dot-space);
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	position: relative;
+	z-index: 1;
+}
 	background-size: var(--dot-space) var(--dot-space);
 	margin: 0;
 	padding: 0;
