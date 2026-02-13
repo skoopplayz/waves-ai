@@ -28,8 +28,7 @@
 
 body {
 	font-family: var(--font-family-primary);
-	background-color: var(--color-pattern-bg);
-	background-image: radial-gradient(var(--color-pattern-dot) var(--dot-size), transparent 0);
+	background-color: #ffffff;
 	background-size: var(--dot-space) var(--dot-space);
 	margin: 0;
 	padding: 0;
@@ -433,8 +432,7 @@ pre {
 }
 
 .branding img {
-	width: 130px;
-	height: 90px;
+	width: 400px;
 	margin-bottom: 10px;
 }
 
@@ -601,5 +599,3 @@ pre {
 		transform: translateY(0);
 	}
 }
-
-/* https://discord.usewaves.site */
