@@ -28,7 +28,7 @@
 
 body {
 	font-family: var(--font-family-primary);
-	background-color: transparent);
+	background-color: transparent;
 	background-size: var(--dot-space) var(--dot-space);
 	margin: 0;
 	padding: 0;
@@ -432,8 +432,9 @@ pre {
 }
 
 .branding img {
-	width: 400px;
+	width: 300px;
 	margin-bottom: 10px;
+	border-radius: 12px;
 }
 
 .branding div {
@@ -599,3 +600,5 @@ pre {
 		transform: translateY(0);
 	}
 }
+
+/* https://discord.usewaves.site */
