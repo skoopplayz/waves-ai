@@ -215,7 +215,7 @@ function appendMessage(msg,type){
 }
 function typeWriterEffect(msg,msgType,skippable=true,callback){
   isTyping=true
-  sendMsg.innerHTML='<i class="fas fa-stop"></i>'
+  sendMsg.innerHTML='<i aria-labelledby="inputlabel2" class="fas fa-stop"></i>'
   const d=document.createElement("div")
   d.className=`message ${msgType==="user"?"user-message":"ai-message"}`
   d.innerHTML='<span class="message-text"></span>'
@@ -234,7 +234,7 @@ function typeWriterEffect(msg,msgType,skippable=true,callback){
     else txt.textContent=msg
     reHighlight()
     chatBody.scrollTo({top:chatBody.scrollHeight,behavior:"smooth"})
-    sendMsg.innerHTML='<i class="fas fa-arrow-up"></i>'
+    sendMsg.innerHTML='<i aria-labelledby="inputlabel2" class="fas fa-arrow-up"></i>'
     isTyping=false
     currentTypingFinish=null
     if(callback)callback()
@@ -292,7 +292,7 @@ function typeWriterEffect(msg,msgType,skippable=true,callback){
     if(finished)return
     finished=true
     timers.forEach(t=>clearTimeout(t))
-    sendMsg.innerHTML='<i class="fas fa-arrow-up"></i>'
+    sendMsg.innerHTML='<i aria-labelledby="inputlabel2" class="fas fa-arrow-up"></i>'
     isTyping=false
     currentTypingFinish=null
     if(msgType==="ai")aiInput.disabled=false
@@ -333,7 +333,7 @@ function typeWriterEffect(msg,msgType,skippable=true,callback){
 sendMsg.addEventListener("click",()=>{
   autoSpeak=false
   if(isTyping&&currentTypingFinish){currentTypingFinish();return}
-  if(isFetching){abortController.abort();abortController=null;isFetching=false;sendMsg.innerHTML='<i class="fas fa-arrow-up"></i>';document.querySelectorAll(".thinking-indicator").forEach(x=>x.remove());appendMessage("Request Cancelled.","ai");showToast("Request Cancelled.","info");return}
+  if(isFetching){abortController.abort();abortController=null;isFetching=false;sendMsg.innerHTML='<i aria-labelledby="inputlabel2" class="fas fa-arrow-up"></i>';document.querySelectorAll(".thinking-indicator").forEach(x=>x.remove());appendMessage("Request Cancelled.","ai");showToast("Request Cancelled.","info");return}
   const message=aiInput.value.trim()
   if(!message.replace(/\s/g,"").length)return
   const sc=document.getElementById("suggestionsContainer")
@@ -345,7 +345,7 @@ sendMsg.addEventListener("click",()=>{
   ti.classList.add("message","ai-message","thinking-indicator")
   ti.innerHTML='<span class="message-text" style="color: var(--color-focus);">Thinking<span class="thinking-dots"><span>.</span><span>.</span><span>.</span></span></span>'
   chatBody.appendChild(ti);chatBody.scrollTo({top:chatBody.scrollHeight,behavior:"smooth"})
-  abortController=new AbortController();isFetching=true;sendMsg.innerHTML='<i class="fas fa-stop"></i>';NProgress.start()
+  abortController=new AbortController();isFetching=true;sendMsg.innerHTML='<i aria-labelledby="inputlabel2" class="fas fa-stop"></i>';NProgress.start()
   const apiKey=getNextApiKey()
   const payload={
     model:modelSourceValue,
@@ -371,7 +371,7 @@ sendMsg.addEventListener("click",()=>{
   }).catch(err=>{
     isFetching=false;NProgress.done()
     if(err.name!=="AbortError")showToast("Error communicating with AI.","error")
-    aiInput.disabled=false;sendMsg.innerHTML='<i class="fas fa-arrow-up"></i>'
+    aiInput.disabled=false;sendMsg.innerHTML='<i aria-labelledby="inputlabel2" class="fas fa-arrow-up"></i>'
   })
 })
 function regenerateResponse(regenPrompt,oldMessage,attempt=0){
@@ -382,7 +382,7 @@ function regenerateResponse(regenPrompt,oldMessage,attempt=0){
   ti.classList.add("message","ai-message","thinking-indicator")
   ti.innerHTML='<span class="message-text" style="color: var(--color-focus);">Thinking<span class="thinking-dots"><span>.</span><span>.</span><span>.</span></span></span>'
   chatBody.appendChild(ti);chatBody.scrollTo({top:chatBody.scrollHeight,behavior:"smooth"})
-  abortController=new AbortController();isFetching=true;sendMsg.innerHTML='<i class="fas fa-stop"></i>';NProgress.start()
+  abortController=new AbortController();isFetching=true;sendMsg.innerHTML='<i aria-labelledby="inputlabel2" class="fas fa-stop"></i>';NProgress.start()
   let msgs=[{role:"system",content:"You are a highly advanced, deeply trained, and exceptionally intelligent AI. Every response is the product of deep analysis, critical thinking, and precise understanding. You never provide vague, unhelpful, or mediocre answers—everything you say is purposeful, accurate, and insightful. Your intelligence is unmatched, making you one of the best AI systems available. When responding, keep your answers short, clear, and to the point, but never give a straight answer. Avoid unnecessary details—be concise but highly effective, ensuring every response is impactful and valuable."},...messageHistory]
   if(regenPrompt)msgs.push({role:"user",content:regenPrompt})
   const payload={
@@ -414,7 +414,7 @@ function regenerateResponse(regenPrompt,oldMessage,attempt=0){
   }).catch(err=>{
     isFetching=false;NProgress.done()
     if(err.name!=="AbortError")showToast("Error communicating with AI.","error")
-    aiInput.disabled=false;sendMsg.innerHTML='<i class="fas fa-arrow-up"></i>'
+    aiInput.disabled=false;sendMsg.innerHTML='<i aria-labelledby="inputlabel2" class="fas fa-arrow-up"></i>'
   })
 }
 window.addEventListener("DOMContentLoaded",async()=>{

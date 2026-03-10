@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Waves AI</title>
+      <title>Tutormate AI</title>
       
       <meta property="og:title" content="Waves AI">
       <meta property="og:description" content="Waves. A sleek and minimalist AI chat interface.">
@@ -31,7 +31,7 @@
       
       <div class="chat-container">
          <div class="chat-header">
-            Waves AI <span class="version"><i class="fas fa-flask"></i> beta</span>
+         Tutormate AI <span class="version"><i class="fas fa-flask"></i> beta</span>
          </div>
          
          <div class="branding">
@@ -51,12 +51,11 @@
          
          <div class="chat-body" id="chatBody"></div>
          <div class="suggestions-container" id="suggestionsContainer"></div>
-         
+         <p id="inputlabel">Enter any questions here:</p>
          <div class="chat-input">
-            <p id="inputlabel" style="p{background-color: azure;}">This is a text box for students to enter questions.</p>
             <input type="text" aria-labelledby="inputlabel" id="aiInput" placeholder="What would you like to talk about?" autocomplete="off">
             <input type="file" id="imageUpload" accept="image/*" style="display:none;">
-            <button alt="enter button" id="sendMsg"><i class="fas fa-arrow-up"></i>Send Response</button>
+            <button aria-labelledby="inputlabel2" id="sendMsg"><i class="fas fa-arrow-up"></i><p id="inputlabel2">Put Responses here:</p></button>
          </div>
       </div>
    </body>
