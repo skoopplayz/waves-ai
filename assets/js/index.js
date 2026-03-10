@@ -242,7 +242,7 @@ function typeWriterEffect(msg,msgType,skippable=true,callback){
       aiInput.disabled=false
       aiInput.focus()
       const bc=document.createElement("div");bc.classList.add("ai-buttons")
-      const cp=document.createElement("button");cp.classList.add("ai-button");cp.innerHTML='<i aria-label="copy button" class="fa-regular fa-copy"></i>'
+      const cp=document.createElement("button");cp.classList.add("ai-button");cp.innerHTML='<i class="fa-regular fa-copy"></i>'
       cp.addEventListener("click",()=>{
         const r=document.createRange();r.selectNodeContents(txt)
         const s=window.getSelection();s.removeAllRanges();s.addRange(r)
@@ -250,7 +250,7 @@ function typeWriterEffect(msg,msgType,skippable=true,callback){
         s.removeAllRanges()
       })
       bc.appendChild(cp)
-      const ra=document.createElement("button");ra.classList.add("ai-button");ra.innerHTML='<i aria-label="Speak " class="fa-solid fa-volume-up"></i>';ra.dataset.speaking="false"
+      const ra=document.createElement("button");ra.classList.add("ai-button");ra.innerHTML='<i class="fa-solid fa-volume-up"></i>';ra.dataset.speaking="false"
       ra.addEventListener("click",()=>{
         const t=txt.textContent||"";if(!t.trim())return
         if(window.speechSynthesis){
