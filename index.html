@@ -37,17 +37,13 @@
          <div class="branding">
             <img src="assets/images/icons/Untitled design-10-2.png" alt="TutorMate Logo">
          </div>
-         
+
          <div class="chat-options">
     <div class="option">
-        <label for="modelSelector"></label>
+        <label aria-label="nothing here!" for="modelSelector"></label>
         <div class="selector" id="modelSelector">
             <div class="selector-selected" data-value="llama-3.3-70b-versatile">TutorMate</div>
             <div class="selector-options" style="display: none;">
-                <div data-value="llama-3.1-8b-instant">Llama 3.1 8B Instant</div>
-                <div data-value="llama-3.3-70b-versatile">Llama 3.3 70B Versatile</div>
-                <div data-value="deepseek-r1-distill-llama-70b">Deepseek R1 Distill Llama 70B</div>
-                <div data-value="gemma2-9b-it">Gemma2 9B IT</div>
             </div>
         </div>
     </div>
@@ -57,9 +53,10 @@
          <div class="suggestions-container" id="suggestionsContainer"></div>
          
          <div class="chat-input">
-            <input type="text" id="aiInput" placeholder="What would you like to talk about?" autocomplete="off">
+            <p id="inputlabel" style="p{background-color: azure;}">This is a text box for students to enter questions.</p>
+            <input type="text" aria-labelledby="inputlabel" id="aiInput" placeholder="What would you like to talk about?" autocomplete="off">
             <input type="file" id="imageUpload" accept="image/*" style="display:none;">
-            <button alt="enter button" id="sendMsg"><i class="fas fa-arrow-up"></i></button>
+            <button alt="enter button" id="sendMsg"><i class="fas fa-arrow-up"></i>Send Response</button>
          </div>
       </div>
    </body>
