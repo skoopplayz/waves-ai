@@ -9,5 +9,3 @@ document.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('load', function () {
   NProgress.done();
 });
-
-/* https://discord.usewaves.site */

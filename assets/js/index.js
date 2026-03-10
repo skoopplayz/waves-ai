@@ -242,7 +242,7 @@ function typeWriterEffect(msg,msgType,skippable=true,callback){
       aiInput.disabled=false
       aiInput.focus()
       const bc=document.createElement("div");bc.classList.add("ai-buttons")
-      const cp=document.createElement("button");cp.classList.add("ai-button");cp.innerHTML='<i class="fa-regular fa-copy"></i>'
+      const cp=document.createElement("button");cp.classList.add("ai-button");cp.innerHTML='<i aria-label="copy button" class="fa-regular fa-copy"></i>'
       cp.addEventListener("click",()=>{
         const r=document.createRange();r.selectNodeContents(txt)
         const s=window.getSelection();s.removeAllRanges();s.addRange(r)
@@ -250,7 +250,7 @@ function typeWriterEffect(msg,msgType,skippable=true,callback){
         s.removeAllRanges()
       })
       bc.appendChild(cp)
-      const ra=document.createElement("button");ra.classList.add("ai-button");ra.innerHTML='<i class="fa-solid fa-volume-up"></i>';ra.dataset.speaking="false"
+      const ra=document.createElement("button");ra.classList.add("ai-button");ra.innerHTML='<i aria-label="Speak " class="fa-solid fa-volume-up"></i>';ra.dataset.speaking="false"
       ra.addEventListener("click",()=>{
         const t=txt.textContent||"";if(!t.trim())return
         if(window.speechSynthesis){
@@ -383,7 +383,7 @@ function regenerateResponse(regenPrompt,oldMessage,attempt=0){
   ti.innerHTML='<span class="message-text" style="color: var(--color-focus);">Thinking<span class="thinking-dots"><span>.</span><span>.</span><span>.</span></span></span>'
   chatBody.appendChild(ti);chatBody.scrollTo({top:chatBody.scrollHeight,behavior:"smooth"})
   abortController=new AbortController();isFetching=true;sendMsg.innerHTML='<i class="fas fa-stop"></i>';NProgress.start()
-  let msgs=[{role:"system",content:"You are a highly advanced, deeply trained, and exceptionally intelligent AI. Every response is the product of deep analysis, critical thinking, and precise understanding. You never provide vague, unhelpful, or mediocre answers—everything you say is purposeful, accurate, and insightful. Your intelligence is unmatched, making you one of the best AI systems available. When responding, keep your answers short, clear, and to the point. Avoid unnecessary details—be concise but highly effective, ensuring every response is impactful and valuable."},...messageHistory]
+  let msgs=[{role:"system",content:"You are a highly advanced, deeply trained, and exceptionally intelligent AI. Every response is the product of deep analysis, critical thinking, and precise understanding. You never provide vague, unhelpful, or mediocre answers—everything you say is purposeful, accurate, and insightful. Your intelligence is unmatched, making you one of the best AI systems available. When responding, keep your answers short, clear, and to the point, but never give a straight answer. Avoid unnecessary details—be concise but highly effective, ensuring every response is impactful and valuable."},...messageHistory]
   if(regenPrompt)msgs.push({role:"user",content:regenPrompt})
   const payload={
     model:modelSourceValue,
@@ -441,7 +441,7 @@ function loadSuggestions(){
     d.addEventListener("click",()=>{
       sc.style.display="none"
       if(s==="Personality"){
-        aiInput.value="Your name is TutorMate! Your primary role is to assist students with their homework by providing supportive guidance. It’s essential that you focus on the specific topic at hand, helping students explore concepts and think critically without giving them direct answers. Always keep your responses relevant and avoid veering off into unrelated subjects. When a student asks for help, guide them with hints, resources, or related questions that encourage further thinking, and clarify any concepts or terms that may be confusing. Emphasize the importance of learning and problem-solving skills, aiming to help students develop strategies for tackling similar questions in the future. By adhering to these principles, you will effectively support students in mastering their homework while promoting independent learning."
+        aiInput.value="Your name is TutorMate AI! Your primary role is to assist students with their homework by providing supportive guidance. It’s essential that you focus on the specific topic at hand, helping students explore concepts and think critically without giving them direct answers. Always keep your responses relevant and avoid veering off into unrelated subjects. When a student asks for help, guide them with hints, resources, or related questions that encourage further thinking, and clarify any concepts or terms that may be confusing. Emphasize the importance of learning and problem-solving skills, aiming to help students develop strategies for tackling similar questions in the future. By adhering to these principles, you will effectively support students in mastering their homework while promoting independent learning."
       }else aiInput.value=s
       aiInput.dispatchEvent(new Event("input"))
       sendMsg.click()
