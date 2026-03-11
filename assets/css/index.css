@@ -93,7 +93,7 @@ body {
 
 .chat-header {
 	position: relative;
-	font-size: 24px;
+	font-size: 15px;
 	font-weight: bolder;
 	background: linear-gradient(90deg, #FFFFFF 0%, #A0A0A0 15%, #5e5e5e 100%);
 	-webkit-background-clip: text;
