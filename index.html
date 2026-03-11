@@ -5,9 +5,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Tutormate AI</title>
       
-      <meta property="og:title" content="Waves AI">
-      <meta property="og:description" content="Waves. A sleek and minimalist AI chat interface.">
-      <meta property="og:image" content="/assets/images/icons/favicon.ico">
       <meta name="theme-color" content="#b6b6b6">
       <meta name="msapplication-TileColor" content="#b6b6b6">
       
@@ -40,8 +37,6 @@
 
          <div class="chat-options">
     <div class="option">
-         <p id="blanclabel"> </p>
-        <label aria-labelledby="blanclabel" for="modelSelector"></label>
         <div class="selector" id="modelSelector">
             <div class="selector-selected" data-value="llama-3.3-70b-versatile">TutorMate</div>
             <div class="selector-options" style="display: none;">
@@ -55,7 +50,6 @@
          <p id="inputlabel">Enter any questions here:</p>
          <div class="chat-input">
             <input type="text" aria-labelledby="inputlabel" id="aiInput" placeholder="What would you like to talk about?" autocomplete="off">
-            <input type="file" id="imageUpload" accept="image/*" style="display:none;">
             <button aria-labelledby="inputlabel2" id="sendMsg"><i class="fas fa-arrow-up"></i><p id="inputlabel2">Put Responses here:</p></button>
          </div>
       </div>
